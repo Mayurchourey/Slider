@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="image-container">
+        <div class="myimages">
+            <img src="Los Santos.jpg" alt="IMG-LOS-SANTOS">
+            <img src="w1.jpg" alt="Green-img">
+            <img src="w2.jpg" alt="Green-img">
+            <img src="w3.jpg" alt="Green-img">
+        </div>
+    </div>
+
+    <script>
+        var index = 0;
+        function carosal() {
+            var i;
+            var x = document.getElementsByClassName("myimages");
+            //Hide all slides
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+
+            index++;
+
+            if (index > x.length) {
+                index = 1;
+            }
+
+            x[index - 1].style.display = "block";
+
+            setTimeout(carosal, 2000);
+        }
+
+        carosal();
+    </script>
+</body>
+</html>
